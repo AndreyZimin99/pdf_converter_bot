@@ -1,0 +1,7 @@
+audio/
+pdf_files/
+received_pdf/
+.venv
+venv/
+.txt
+.mypy_cache/
