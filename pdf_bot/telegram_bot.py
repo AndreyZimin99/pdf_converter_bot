@@ -13,6 +13,7 @@ bot = TeleBot(token)
 
 @bot.message_handler(content_types=['text'])
 def send_welcome(message):
+    """Отправка приветственного сообщения."""
     bot.reply_to(message,
                  '''Отправте свой PDF файл для преобразования
 в формат mp3''')
@@ -20,6 +21,7 @@ def send_welcome(message):
 
 @bot.message_handler(content_types=['document'])
 def handle_docs_photo(message):
+    """Получение, обработка, и отправка файла."""
     try:
         chat_id = message.chat.id
 
