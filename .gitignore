@@ -6,3 +6,5 @@ venv/
 .txt
 .mypy_cache/
 .env
+
+./

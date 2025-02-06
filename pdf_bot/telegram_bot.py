@@ -16,7 +16,7 @@ bot = TeleBot(token)
 @bot.message_handler(content_types=['text'])
 def send_welcome(message):
     bot.reply_to(message,
-                 '''Вы можете прислать свой PDF файл для преобразования
+                 '''Отправте свой PDF файл для преобразования
 в формат mp3''')
 
 
