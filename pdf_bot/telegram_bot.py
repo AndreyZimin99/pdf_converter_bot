@@ -8,6 +8,8 @@ load_dotenv()
 
 token = os.getenv('TOKEN')
 
+print(token)
+
 bot = TeleBot(token)
 
 
@@ -32,16 +34,15 @@ def handle_docs_photo(message):
 
         bot.reply_to(message, 'Файл получен, идет обработка ...')
         pdf_to_mp3(file_path=src, language='ru')
-        bot.reply_to(message,
-                     '''Файл обработан.''')
+        bot.reply_to(message, 'Файл обработан, осталось еще чуть-чуть')
         file_name = message.document.file_name.split('.')[0]
         bot.send_audio(chat_id=chat_id, audio=open(f'{file_name}.mp3',
                                                    'rb'))
-        os.remove(src)
-        os.remove(f'{file_name}.mp3')
-        
-    except Exception as e:
-        bot.reply_to(message, e)
+    except Exception as error:
+        print(f'Ошибка {error}')
+        bot.reply_to(message, 'Что-то пошло не так(, повторите попытку')
+    os.remove(src)
+    os.remove(f'{file_name}.mp3')
 
 
 def main():

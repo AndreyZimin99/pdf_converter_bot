@@ -5,3 +5,4 @@ received_pdf/
 venv/
 .txt
 .mypy_cache/
+.env
