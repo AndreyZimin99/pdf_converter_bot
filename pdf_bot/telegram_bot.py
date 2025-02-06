@@ -8,8 +8,6 @@ load_dotenv()
 
 token = os.getenv('TOKEN')
 
-print(token)
-
 bot = TeleBot(token)
 
 
